@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'thin'
 gem 'json'
 gem 'rake'
+gem 'haml'
 
 group :development, :test do
   gem 'capybara'
