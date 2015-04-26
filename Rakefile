@@ -5,3 +5,11 @@ RuboCop::RakeTask.new(:cop)
 RSpec::Core::RakeTask.new(:spec)
 
 task default: [:cop, :spec]
+
+task :console do
+  require 'irb'
+  require 'irb/completion'
+  require_relative 'app/lib/receipt'
+  ARGV.clear
+  IRB.start
+end
