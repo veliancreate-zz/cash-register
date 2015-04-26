@@ -4,6 +4,7 @@ require 'sinatra/json'
 require 'json'
 require_relative 'controllers/app'
 require_relative 'lib/receipt'
+require_relative 'lib/order'
 
 class Till < Sinatra::Base
   enable :sessions
