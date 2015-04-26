@@ -8,3 +8,5 @@
 # Offense count: 1
 Documentation:
   Enabled: false
+Style/MethodDefParentheses:
+  Enabled: false
