@@ -14,4 +14,9 @@ describe 'a complete receipt includes all the info required' do
     receipt.set_date
     expect(receipt.date).to eq(date + ' ' + time)
   end
+  it 'customers can be set on the fly' do
+    customers = %w(Max Sam Deb Sarah)
+    receipt.customers = (customers)
+    expect(receipt.customers).to eq(customers)
+  end
 end
