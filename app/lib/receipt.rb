@@ -2,9 +2,9 @@ require 'date'
 
 class Receipt
   attr_accessor :table_number, :tax_percentage
-  attr_reader :date, :customers
+  attr_reader :customers
 
-  def set_date
+  def date
     time = Time.now.strftime('%T')
     date = Time.now.strftime('%D')
     @date = date + ' ' + time
