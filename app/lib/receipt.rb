@@ -3,7 +3,7 @@ require 'json'
 require_relative '../helpers/json_helper'
 
 class Receipt
-  attr_accessor :table_number, :customers, :items, :date, :tax_percentage
+  attr_accessor :table_number, :customers, :items, :date, :tax_percentage, :number_of_customers
 
   include JsonModelHelper
 
@@ -13,9 +13,11 @@ class Receipt
 
   def order_getter(order_obj = {})
     @table_number = order_obj[:table_number]
-    @customers = order_obj[:customers]
+    @customers ||= []
+    @customers.push(order_obj[:customers])
     @items = order_obj[:items]
     @date = date
+    @number_of_customers = customers_count
   end
 
   def date
@@ -24,7 +26,7 @@ class Receipt
     @date = date + ' ' + time
   end
 
-  def number_of_customers
-    @number_of_customers = @customers.count
+  def customers_count
+    @customers.count
   end
 end

@@ -24,8 +24,9 @@ describe 'a complete receipt includes all the info required' do
   end
   it 'can get an order and populate accordingly' do
     receipt.order_getter(order)
-    expect(receipt.customers).to eq('Jane')
+    expect(receipt.customers).to eq(['Jane'])
     expect(receipt.items).to eq(['Flat White', 'Single Espresso', 'Double Espresso'])
     expect(receipt.table_number).to eq(4)
+    expect(receipt.number_of_customers).to eq(1)
   end
 end
