@@ -37,4 +37,13 @@ class Receipt
     end
     total
   end
+
+  def line_order
+    line_order_array ||= []
+    @items.each do |item|
+      line = { item: item, number: @items.count(item) }
+      line_order_array.push(line)
+    end
+    line_order_array.uniq
+  end
 end
