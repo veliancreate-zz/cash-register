@@ -10,6 +10,14 @@ class Till < Sinatra::Base
   enable :sessions
 
   get '/' do
+    order = Order.new
+    receipt = Receipt.new
+    json = order.json_object
+    @shop_name = json['shopName']
+    @phone = order.phone_parser
+    @address = json['address']
+    @menu = order.keys_getter
+    @receipt = receipt
     erb :"/../views/index"
   end
 

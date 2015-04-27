@@ -1,1 +1,12 @@
 <h1>Coffee shop cash register</h1>
+<h2>Menu</h2>
+<ul>
+  <% @menu.each do |item| %>
+    <li><%= item %></li>
+  <% end %>
+</ul>  
+<h2>Receipt</h2>
+<p><%= @receipt.date %></p>
+<p><%= @shop_name %></p>
+<p><%= @address %></p>
+<p>Phone: <%= @phone %></p>
