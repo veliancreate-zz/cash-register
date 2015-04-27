@@ -10,11 +10,15 @@ describe 'Orders' do
     order.add_customer('Sarah')
     expect(order.customers).to eq(customers)
   end
-  it "throws an error if the item isn't o the menu" do
+  it "throws an error if the item isn't on the menu" do
     expect { order.add_items('Burger') }.to raise_error
   end
   it 'can add items' do
+    items = ['Cafe Latte', 'Cafe Latte', 'Flat White', 'Cappucino']
     order.add_items('Cafe Latte')
-    expect(order.items).to eq(['Cafe Latte'])
+    order.add_items('Cafe Latte')
+    order.add_items('Flat White')
+    order.add_items('Cappucino')
+    expect(order.items).to eq(items)
   end
 end
