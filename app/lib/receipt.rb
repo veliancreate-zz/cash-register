@@ -29,4 +29,12 @@ class Receipt
   def customers_count
     @customers.count
   end
+
+  def total_order
+    total = 0
+    @items.each do |item|
+      total += items_getter[item]
+    end
+    total
+  end
 end

@@ -29,4 +29,8 @@ describe 'a complete receipt includes all the info required' do
     expect(receipt.table_number).to eq(4)
     expect(receipt.number_of_customers).to eq(1)
   end
+  it 'can calculate total of order' do
+    receipt.order_getter(order)
+    expect(receipt.total_order).to eq(10.55)
+  end
 end
