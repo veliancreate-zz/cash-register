@@ -3,10 +3,20 @@ require 'json'
 require_relative '../helpers/json_helper'
 
 class Receipt
-  attr_accessor :table_number, :tax_percentage
-  attr_reader :customers
+  attr_accessor :table_number, :customers, :items, :date, :tax_percentage
 
   include JsonModelHelper
+
+  def initialize
+    @tax_percentage = 8.75
+  end
+
+  def order_getter(order_obj = {})
+    @table_number = order_obj[:table_number]
+    @customers = order_obj[:customers]
+    @items = order_obj[:items]
+    @date = date
+  end
 
   def date
     time = Time.now.strftime('%T')
@@ -15,6 +25,6 @@ class Receipt
   end
 
   def number_of_customers
-    @customers.count
+    @number_of_customers = @customers.count
   end
 end
