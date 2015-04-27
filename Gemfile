@@ -6,6 +6,10 @@ gem 'sinatra'
 gem 'thin'
 gem 'json'
 gem 'rake'
+gem 'rack-flash3'
+gem 'sinatra-partial'
+gem 'sinatra-contrib'
+gem 'tilt'
 
 group :development, :test do
   gem 'capybara'
@@ -14,6 +18,4 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rspec'
   gem 'shotgun'
-  gem 'rack-flash3'
-  gem 'sinatra-partial'
 end
