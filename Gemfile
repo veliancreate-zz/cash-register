@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'sinatra'
+gem 'sinatra-activerecord'
+gem 'pg'
 gem 'thin'
 gem 'json'
 gem 'rake'
@@ -13,6 +15,7 @@ gem 'tilt'
 
 group :development, :test do
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'launchy'
   gem 'rspec'
   gem 'rubocop'

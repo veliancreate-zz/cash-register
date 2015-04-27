@@ -2,9 +2,26 @@
 <h2>Menu</h2>
 <ul>
   <% @menu.each do |item| %>
-    <li><%= item %></li>
+    <li><a class="order_item" href="#"><%= item %></a></li>
   <% end %>
-</ul>  
+</ul>
+<h2>Current Order</h2>
+<p>VAT: <%= @order.tax_percentage %>%</p>
+<p>Table Number: <%= @order.table_number %></p> 
+<p>Customer(s):</p>
+<ul>
+  <% @order.customers.each do |customer| %>
+    <li><%= customer %></li>
+  <% end %>
+</ul> 
+<ul>
+  <% @order.line_order.each do |order_item| %>
+    <li><%= order_item[0] %></li>
+    <li><%= order_item[1] %></li>
+  <% end %>  
+</ul>
+<p>Total: £<%= @order.total %></p>
+
 <h2>Receipt</h2>
 <p><%= @receipt.date %></p>
 <p><%= @shop_name %></p>

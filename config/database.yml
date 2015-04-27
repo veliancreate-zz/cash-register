@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: till
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PASS'] %>
+  host: localhost
+
+test:
+  adapter: postgresql
+  database: till_test
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_PASS'] %>
+  host: localhost
