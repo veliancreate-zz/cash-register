@@ -9,7 +9,7 @@ task default: [:cop, :spec]
 task :console do
   require 'irb'
   require 'irb/completion'
-  require_relative 'app/lib/receipt'
+  require_relative 'app/lib/order'
   ARGV.clear
   IRB.start
 end
