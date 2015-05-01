@@ -2,13 +2,21 @@
 <h2>Menu</h2>
 <ul>
   <% @menu.each do |item| %>
-    <li><%= item %></li>
+    <li><a href="#" class="product"><%= item[0] %></a></li>
+    <li>Price: £<%= item[1] %></li>
   <% end %>
 </ul>
 <h2>Current Order</h2>
-  
+<ul>
+  <% @order.line_order.each do |line| %>
+    <li class="line-order"><%= line %></li>
+  <% end %>
+</ul>
+
 <h2>Receipt</h2>
-<p><%= @receipt.date %></p>
-<p><%= @shop_name %></p>
-<p><%= @address %></p>
-<p>Phone: <%= @phone %></p>
+<% if @receipt %>
+  <p><%= @receipt.date %></p>
+  <p><%= @shop_name %></p>
+  <p><%= @address %></p>
+  <p>Phone: <%= @phone %></p>
+<% end %>

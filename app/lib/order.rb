@@ -12,6 +12,7 @@ class Order
     @items = options.fetch(:items, [])
     @tax_percentage = options.fetch(:tax_percentage, 5)
     @table_number = options.fetch(:table_number, 1)
+    @line_order = []
   end
 
   def add_customer(customer)
@@ -30,6 +31,10 @@ class Order
     @items.delete(item)
   end
 
+  def number_of_customers
+    @customers.count
+  end
+
   def total
     total = 0
     @items.each do |item|
@@ -39,11 +44,11 @@ class Order
   end
 
   def line_order
-    line_order_array ||= []
     @items.each do |item|
       line = { item: item, number: @items.count(item) }
-      line_order_array.push(line)
+      @line_order.push(line)
     end
-    @line_order = line_order_array.uniq
+    @line_order.reverse!.uniq! { |line| line[:item] }
+    @line_order
   end
 end
