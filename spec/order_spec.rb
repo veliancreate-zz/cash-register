@@ -36,6 +36,6 @@ describe 'Orders' do
     expect(order_more.total).to eq(17.35)
   end
   it 'can count the items in an order' do
-    expect(order_more.line_order).to eq([{ item: 'Flat White', number: 2 }, { item: 'Single Espresso', number: 2 }, { item: 'Double Espresso', number: 1 }])
+    expect(order_more.line_order).to eq([{ item: 'Double Espresso', number: 1 }, { item: 'Flat White', number: 2 }, { item: 'Single Espresso', number: 2 }])
   end
 end

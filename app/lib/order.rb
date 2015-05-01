@@ -49,6 +49,6 @@ class Order
       @line_order.push(line)
     end
     @line_order.reverse!.uniq! { |line| line[:item] }
-    @line_order
+    @line_order.sort_by! { |line| line[:item] }
   end
 end
