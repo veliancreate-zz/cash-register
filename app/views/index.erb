@@ -7,10 +7,8 @@
   <% end %>
 </ul>
 <h2>Current Order</h2>
-<ul>
-  <% @order.line_order.each do |line| %>
-    <li class="line-order"><%= line %></li>
-  <% end %>
+<ul id="dynamic-list">
+
 </ul>
 
 <h2>Receipt</h2>

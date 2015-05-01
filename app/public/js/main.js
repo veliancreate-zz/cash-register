@@ -3,7 +3,12 @@ $( document ).ready( function() {
     e.preventDefault();
     text = $( this ).text();
     $.post( '/', { product: text }, function( response ){
-      console.log(response.products)
+      arr = response.products
+      $("ul#dynamic-list").empty();
+      for(var i in arr) {
+        var li = "<li>";
+        $("ul#dynamic-list").append(li.concat(arr[i].item), li.concat(arr[i].number));
+      }
     });
   });
 });
