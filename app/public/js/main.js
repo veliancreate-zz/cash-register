@@ -5,7 +5,7 @@ $( document ).ready( function() {
     
     $.post( '/', { product: text }, function( response ){
       arr = response.products
-      $("ul#dynamic-list").empty();
+      $("ul.dynamic-ul").empty();
       for(var i in arr) {
         var li = "<li>";
         $("ul#dynamic-list").append(li.concat(arr[i].number + ' x ' + arr[i].item));
