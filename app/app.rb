@@ -15,18 +15,19 @@ class Till < Sinatra::Base
 
   RECEIPT = Receipt.new(Order)
 
-  get '/' do
+  before '/' do
     @receipt = RECEIPT
     objects_getter
+  end
+
+  get '/' do
     erb :"/../views/index"
   end
 
   post '/' do
-    @receipt = RECEIPT
-    objects_getter
     @receipt.order.add_item(params[:product])
-    products = @receipt.order.line_order
-    body json(products: products)
+    order = @receipt.order
+    body json(order: order.to_json)
   end
 
   set :views, proc { File.join(root, 'views') }
