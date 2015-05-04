@@ -10,22 +10,36 @@
     </ul>
   </section>
   <section class="col-xs-12 col-sm-4">  
-    <h2>Current Order</h2>
-    <form action="/">
+    <h2>Current order:</h2>
+    <form action="/customer_update" method="post">
       Add customer<input type="text" name="customer">
-      Table number
-      <select>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
     </form>
+    Table number:
+    <select>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
 
+    <p id="table-number"></p>
+    <% if @order.customers %>
+      <ul>
+        <% @order.customers.each do |customer| %>
+          <li><%= customer %></li>
+        <% end %>
+      </ul>    
+    <% end %>  
     <ul id="dynamic-list" class="dynamic-ul">
+      <% @order.line_order.each do |line| %>
+        <li><%= line[:item] %> <%= line[:number] %> x <%= line[:item_price] %></li>
+      <% end %>
     </ul>
     <ul id="dynamic-costs-list" class="dynamic-ul">
+      <li>Pretax total: £<%= @order.total %></li>
+      <li>VAT: <%= @order.tax_percentage %>%</li>
+      <li>Total due: £<%= @order.tax_applied %></li>
     </ul>
 
     <a id="generate-receipt" href="#">Generate receipt</a>
@@ -38,9 +52,13 @@
     <p>Phone: <%= @receipt_list['phone'] %></p>
     <% if @receipt_order %>  
       <p>Table: <%= @receipt_order['table_number'] %>/<%= @receipt_list['customers_count'] %></p>
-
+      <ul>
+      <% @receipt_order['customers'].each do |customer| %>
+        <li><%= customer %></li>
+      <% end %>
+      </ul>
       <% @receipt_order['line_order'].each do |item| %>
-        <p><%= item %></p>
+        <p><%= item['item'] %>  <%= item['number'] %> x <%= item['item_price'] %></p>
       <% end %>
 
       <p>Pre tax: <%= @receipt_order['total'] %></p>

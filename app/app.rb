@@ -30,11 +30,22 @@ class Till < Sinatra::Base
 
   post '/add_item' do
     @order.add_item(params[:product])
-    body json(order: @order.to_json)
+    redirect '/'
+  end
+
+  get '/customer_update' do
+    erb :"/../views/index"
+  end
+
+  post '/customer_update' do
+    @order.table_number = params[:table_number] if params[:table_number]
+    @order.add_customer(params[:customer]) if params[:customer]
+    erb :"/../views/index"
   end
 
   get '/receipt_update' do
     @receipt_order = @receipt_list['order']
+    @order = Order.new
     @receipt.reset_order(Order)
     erb :"/../views/index"
   end
