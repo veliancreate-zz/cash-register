@@ -30,10 +30,6 @@ class Order
     @items.delete(item)
   end
 
-  def number_of_customers
-    @customers.count
-  end
-
   def total
     @total = 0
     @items.each do |item|

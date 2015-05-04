@@ -1,21 +1,50 @@
-<h1>Coffee shop cash register</h1>
-<h2>Menu</h2>
-<ul>
-  <% @menu.each do |item| %>
-    <li><a href="#" class="product"><%= item[0] %></a></li>
-    <li>Price: £<%= item[1] %></li>
-  <% end %>
-</ul>
-<h2>Current Order</h2>
-<ul id="dynamic-list" class="dynamic-ul">
-</ul>
-<ul id="dynamic-costs-list" class="dynamic-ul">
-</ul>
+<main class="row">  
+  <h1>Coffee shop cash register</h1>
+  <section class="col-xs-12 col-sm-4">
+    <h2>Menu</h2>
+    <ul>
+      <% @menu.each do |item| %>
+        <li><a href="#" class="product"><%=  item[0] %></a></li>
+        <li>Price: £<%= item[1] %></li>
+      <% end %>
+    </ul>
+  </section>
+  <section class="col-xs-12 col-sm-4">  
+    <h2>Current Order</h2>
+    <form action="/">
+      Add customer<input type="text" name="customer">
+      Table number
+      <select>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </form>
 
-<h2>Receipt</h2>
-<% if @receipt %>
-  <p><%= @receipt.date %></p>
-  <p><%= @shop_name %></p>
-  <p><%= @address %></p>
-  <p>Phone: <%= @phone %></p>
-<% end %>
+    <ul id="dynamic-list" class="dynamic-ul">
+    </ul>
+    <ul id="dynamic-costs-list" class="dynamic-ul">
+    </ul>
+
+    <a id="generate-receipt" href="#">Generate receipt</a>
+  </section>  
+  <section class="col-xs-12 col-sm-4">
+    <h2>Receipt</h2>
+    <p><%= @receipt_list['date'] %></p>
+    <p><%= @receipt_list['shop_name'] %></p>
+    <p><%= @receipt_list['address'] %></p>
+    <p>Phone: <%= @receipt_list['phone'] %></p>
+    <% if @receipt_order %>  
+      <p>Table: <%= @receipt_order['table_number'] %>/<%= @receipt_list['customers_count'] %></p>
+
+      <% @receipt_order['line_order'].each do |item| %>
+        <p><%= item %></p>
+      <% end %>
+
+      <p>Pre tax: <%= @receipt_order['total'] %></p>
+      <p>Total due: <%= @receipt_order['tax_applied'] %></p>
+    <% end %>  
+  </section>  
+</main>  

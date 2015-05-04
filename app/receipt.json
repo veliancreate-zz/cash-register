@@ -1,0 +1,44 @@
+{
+  "shop_name": "The Coffee Connection",
+  "phone": "+1 (650) 600-708",
+  "address": "123 Lakeside Way",
+  "order": {
+    "items": [
+      "Cafe Latte",
+      "Cafe Latte",
+      "Cafe Latte",
+      "Choc Mudcake",
+      "Choc Mudcake",
+      "Choc Mudcake",
+      "Chocolate Chip Muffin",
+      "Chocolate Chip Muffin",
+      "Chocolate Chip Muffin"
+    ],
+    "table_number": 1,
+    "tax_percentage": 5,
+    "tax_applied": 47.88,
+    "customers": [
+
+    ],
+    "line_order": [
+      {
+        "item": "Cafe Latte",
+        "number": 3,
+        "item_price": 4.75
+      },
+      {
+        "item": "Choc Mudcake",
+        "number": 3,
+        "item_price": 6.4
+      },
+      {
+        "item": "Chocolate Chip Muffin",
+        "number": 3,
+        "item_price": 4.05
+      }
+    ],
+    "total": 45.6
+  },
+  "date": "05/04/15 17:11:12",
+  "customers_count": 0
+}
