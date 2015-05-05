@@ -1,10 +1,12 @@
 require 'json'
 require_relative '../helpers/json_helper'
+require_relative '../helpers/calculator'
 
 class Order
-  attr_accessor :table_number, :tax_percentage, :items, :tax_applied, :customers, :line_order
+  attr_accessor :table_number, :tax_percentage, :items, :customers, :line_order
 
   include JsonModelHelper
+  include Calculator
 
   def initialize(options = {})
     @customers = options.fetch(:customers, [])
@@ -28,28 +30,6 @@ class Order
 
   def remove_item(item)
     @items.delete(item)
-  end
-
-  def total
-    @total = 0
-    @items.each do |item|
-      @total += items_getter[item]
-    end
-    @total.round(2)
-  end
-
-  def tax_applied
-    @tax_applied = 0
-    @tax_applied = tax_multiplier.round(2)
-  end
-
-  def tax_multiplier
-    multiply = @tax_percentage / 100.round(3)
-    total * multiply + total
-  end
-
-  def calculate_change(amount_given)
-    (amount_given - tax_applied).round(2)
   end
 
   def line_order

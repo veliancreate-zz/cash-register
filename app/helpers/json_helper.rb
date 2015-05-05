@@ -1,6 +1,6 @@
 module JsonModelHelper
   def json_object
-    menu = File.read('app/hipstercoffee.json')
+    menu = File.read('app/json/hipstercoffee.json')
     JSON.parse(menu)[0]
   end
 

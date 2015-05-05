@@ -46,12 +46,12 @@ class Receipt
   end
 
   def write_json
-    File.write('app/receipt.json', JSON.pretty_generate(to_json))
+    File.write('app/json/receipt.json', JSON.pretty_generate(to_json))
   end
 
   def read_json
     write_json
-    File.open('app/receipt.json') do |f|
+    File.open('app/json/receipt.json') do |f|
       JSON.parse(f.read)
     end
   end
