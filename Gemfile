@@ -18,4 +18,5 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rspec'
   gem 'shotgun'
+  gem 'poltergeist'
 end

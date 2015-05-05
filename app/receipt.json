@@ -4,37 +4,19 @@
   "address": "123 Lakeside Way",
   "order": {
     "items": [
-      "Blueberry Muffin",
-      "Choc Mousse",
-      "Choc Mousse",
-      "Cortado"
+
     ],
     "table_number": 1,
     "tax_percentage": 5,
-    "tax_applied": 26.25,
+    "tax_applied": 0.0,
     "customers": [
-      "John",
-      "Dave"
+
     ],
     "line_order": [
-      {
-        "item": "Blueberry Muffin",
-        "number": 1,
-        "item_price": 4.05
-      },
-      {
-        "item": "Choc Mousse",
-        "number": 2,
-        "item_price": 8.2
-      },
-      {
-        "item": "Cortado",
-        "number": 1,
-        "item_price": 4.55
-      }
+
     ],
-    "total": 25.0
+    "total": 0.0
   },
-  "date": "05/04/15 21:50:16",
-  "customers_count": 2
+  "date": "05/05/15 12:16:11",
+  "customers_count": 0
 }

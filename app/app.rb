@@ -45,8 +45,8 @@ class Till < Sinatra::Base
 
   get '/receipt_update' do
     @receipt_order = @receipt_list['order']
-    @order = Order.new
     @receipt.reset_order(Order)
+    @order = @receipt.order
     erb :"/../views/index"
   end
 
