@@ -37,6 +37,24 @@ describe 'Calculator' do
                    'Blueberry Muffin',
                    'Blueberry Muffin']
   end
+
+  let(:order_final) do
+    double :order,
+           table_number: 4,
+           customers: 'John',
+           items: ['Americano',
+                   'Americano',
+                   'Americano',
+                   'Americano',
+                   'Tiramisu',
+                   'Tiramisu',
+                   'Blueberry Muffin',
+                   'Blueberry Muffin',
+                   'Muffin Of The Day',
+                   'Chocolate Chip Muffin',
+                   'Muffin Of The Day']
+  end
+
   it 'can calculate total of order' do
     expect(calculator.total_up(order)[:total]).to eq(17.35)
   end
@@ -62,5 +80,8 @@ describe 'Calculator' do
 
   it 'can calculate proper discounts' do
     expect(calculator.total_up(order_john)).to eq(total: 53.20, tax_applied: 55.86)
+  end
+  it 'can calculate proper discounts' do
+    expect(calculator.total_up(order_final)).to eq(total: 54.07, tax_applied: 56.78)
   end
 end

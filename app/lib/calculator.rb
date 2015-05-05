@@ -29,7 +29,7 @@ class Calculator
       discount_check(item)
     end
     @total -= @total * percentage_discount / 100.round(3) if @total > cost_discount
-    @total.round(4)
+    @total.round(2)
   end
 
   def tax_applied
