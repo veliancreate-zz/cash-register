@@ -12,8 +12,6 @@ class Order
     @items = options.fetch(:items, [])
     @table_number = options.fetch(:table_number, 1)
     @line_order = []
-    calculator = options.fetch(:calculator, nil)
-    @calculator = calculator.new if calculator
   end
 
   def calculator=(calculator)

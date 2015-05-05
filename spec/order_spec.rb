@@ -9,9 +9,9 @@ describe 'Orders' do
             'Single Espresso',
             'Flat White',
             'Double Espresso',
-            'Single Espresso'],
-    calculator: Calculator
+            'Single Espresso']
   )
+  order_more.calculator = Calculator
   items = ['Cafe Latte', 'Cafe Latte', 'Flat White', 'Cappucino']
 
   it 'multiple customers can be added' do
