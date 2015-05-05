@@ -6,6 +6,7 @@ require 'json'
 require_relative 'controllers/app'
 require_relative 'lib/receipt'
 require_relative 'lib/order'
+require_relative 'lib/calculator'
 require_relative 'helpers/objects'
 
 class Till < Sinatra::Base
@@ -47,6 +48,7 @@ class Till < Sinatra::Base
     @receipt_order = @receipt_list['order']
     @receipt.reset_order(Order)
     @order = @receipt.order
+    @order.calculator = Calculator
     erb :"/../views/index"
   end
 

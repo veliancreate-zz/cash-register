@@ -1,5 +1,5 @@
 require_relative '../app/lib/order.rb'
-
+require_relative '../app/lib/calculator.rb'
 describe 'Orders' do
   order = Order.new
   order_more = Order.new(
@@ -9,7 +9,8 @@ describe 'Orders' do
             'Single Espresso',
             'Flat White',
             'Double Espresso',
-            'Single Espresso']
+            'Single Espresso'],
+    calculator: Calculator
   )
   items = ['Cafe Latte', 'Cafe Latte', 'Flat White', 'Cappucino']
 
@@ -24,6 +25,10 @@ describe 'Orders' do
 
   it "throws an error if the item isn't on the menu" do
     expect { order.add_item('Burger') }.to raise_error
+  end
+
+  it 'can count the items in an order' do
+    expect(order_more.line_order).to eq([{ item: 'Double Espresso', number: 1, item_price: 3.75 }, { item: 'Flat White', number: 2, item_price: 4.75 }, { item: 'Single Espresso', number: 2, item_price: 2.05 }])
   end
 
   it 'can add items' do
@@ -44,23 +49,7 @@ describe 'Orders' do
     expect(order.items).to eq(['Cafe Latte', 'Cafe Latte', 'Flat White'])
   end
 
-  it 'can calculate total of order' do
-    expect(order_more.total).to eq(17.35)
-  end
-
-  it 'can count the items in an order' do
-    expect(order_more.line_order).to eq([{ item: 'Double Espresso', number: 1, item_price: 3.75 }, { item: 'Flat White', number: 2, item_price: 4.75 }, { item: 'Single Espresso', number: 2, item_price: 2.05 }])
-  end
-
-  it 'can calculate the total due including VAT' do
-    expect(order_more.tax_applied).to eq(18.22)
-  end
-
-  it 'can calculate the correct change' do
-    expect(order_more.calculate_change(20)).to eq(1.78)
-  end
-
-  it 'can display the amount due if the amount given is below the total due' do
-    expect(order_more.calculate_change(15)).to eq(-3.22)
+  it 'can retrieve the applied total' do
+    expect(order_more.total_up).to eq(total: 17.35, tax_applied: 18.22)
   end
 end

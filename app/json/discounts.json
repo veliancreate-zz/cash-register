@@ -1,0 +1,12 @@
+[
+  {
+    "percentage": 10,
+    "product": "muffin",
+    "cost": null
+  }
+  {
+    "percentage": 5,
+    "product": null,
+    "cost": 50
+  }
+]

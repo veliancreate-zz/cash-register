@@ -37,9 +37,9 @@
       <% end %>
     </ul>
     <ul id="dynamic-costs-list" class="dynamic-ul">
-      <li>Pretax total: £<%= @order.total %></li>
-      <li>VAT: <%= @order.tax_percentage %>%</li>
-      <li>Total due: £<%= @order.tax_applied %></li>
+      <li>Pretax total: £<%= @order.total_up[:total] %></li>
+      <li>VAT: <%= @order.calculator.tax_percentage %>%</li>
+      <li>Total due: £<%= @order.total_up[:tax_applied] %></li>
     </ul>
 
     <a id="generate-receipt" href="#">Generate receipt</a>

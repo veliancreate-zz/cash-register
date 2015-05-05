@@ -1,19 +1,27 @@
 require 'json'
 require_relative '../helpers/json_helper'
-require_relative '../helpers/calculator'
 
 class Order
-  attr_accessor :table_number, :tax_percentage, :items, :customers, :line_order
+  attr_accessor :table_number, :items, :customers, :line_order
+  attr_reader :calculator
 
   include JsonModelHelper
-  include Calculator
 
   def initialize(options = {})
     @customers = options.fetch(:customers, [])
     @items = options.fetch(:items, [])
-    @tax_percentage = options.fetch(:tax_percentage, 5)
     @table_number = options.fetch(:table_number, 1)
     @line_order = []
+    calculator = options.fetch(:calculator, nil)
+    @calculator = calculator.new if calculator
+  end
+
+  def calculator=(calculator)
+    @calculator = calculator.new
+  end
+
+  def total_up
+    @calculator.total_up(self)
   end
 
   def add_customer(customer)
@@ -48,11 +56,11 @@ class Order
     {
       items: @items,
       table_number: @table_number,
-      tax_percentage: @tax_percentage,
-      tax_applied: tax_applied,
+      tax_percentage: @calculator.tax_percentage,
+      tax_applied: total_up[:tax_applied],
       customers: @customers,
       line_order: line_order,
-      total: total
+      total: total_up[:total]
     }
   end
 end

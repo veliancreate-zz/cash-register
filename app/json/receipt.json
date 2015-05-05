@@ -4,19 +4,31 @@
   "address": "123 Lakeside Way",
   "order": {
     "items": [
-
+      "Blueberry Muffin",
+      "Blueberry Muffin",
+      "Affogato",
+      "Affogato"
     ],
-    "table_number": 1,
+    "table_number": "4",
     "tax_percentage": 5,
-    "tax_applied": 0.0,
+    "tax_applied": 39.59,
     "customers": [
-
+      "John"
     ],
     "line_order": [
-
+      {
+        "item": "Affogato",
+        "number": 2,
+        "item_price": 14.8
+      },
+      {
+        "item": "Blueberry Muffin",
+        "number": 2,
+        "item_price": 4.05
+      }
     ],
-    "total": 0.0
+    "total": 37.7
   },
-  "date": "05/05/15 13:44:04",
-  "customers_count": 0
+  "date": "05/05/15 15:03:09",
+  "customers_count": 1
 }
