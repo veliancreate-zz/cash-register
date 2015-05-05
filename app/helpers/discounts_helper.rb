@@ -15,11 +15,15 @@ module DiscountsHelper
   end
 
   def cost_discount
-    discounts_selection('cost').sort_by { |discount| discount['cost'] }.last['cost']
+    discounts_sort.last['cost']
   end
 
   def percentage_discount
-    discounts_selection('cost').sort_by { |discount| discount['cost'] }.last['percentage']
+    discounts_sort.last['percentage']
+  end
+
+  def discounts_sort
+    discounts_selection('cost').sort_by { |discount| discount['cost'] }
   end
 
   def discounted_items
@@ -28,12 +32,6 @@ module DiscountsHelper
 
   def discounts_selection(type)
     discounts.select { |discount| discount[type] unless discount[type] == 'NA' }
-  end
-
-  def discounts
-    File.open('app/json/discounts.json') do |f|
-      JSON.parse(f.read)
-    end
   end
 
   def discount_multiplier(discount)

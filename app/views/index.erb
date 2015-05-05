@@ -36,9 +36,17 @@
         <li><%= line[:item] %> <%= line[:number] %> x <%= line[:item_price] %></li>
       <% end %>
     </ul>
+
+    <h3>Discounts</h3>
+    <ul>
+      <% @order.format_discounts.each do |discount| %>
+        <li><%= discount %></li>
+      <% end %>  
+    </ul>
+
     <ul id="dynamic-costs-list" class="dynamic-ul">
       <li>Pretax total: £<%= @order.total_up[:total] %></li>
-      <li>VAT: <%= @order.calculator.tax_percentage %>%</li>
+      <li>VAT: <%= @calculator.tax_percentage %>%</li>
       <li>Total due: £<%= @order.total_up[:tax_applied] %></li>
     </ul>
 
@@ -46,6 +54,12 @@
   </section>  
   <section class="col-xs-12 col-sm-4">
     <h2>Receipt</h2>
+    <h3>Discounts</h3>
+    <ul>
+      <% @receipt.format_discounts.each do |discount| %>
+        <li><%= discount %></li>
+      <% end %>  
+    </ul>
     <p><%= @receipt_list['date'] %></p>
     <p><%= @receipt_list['shop_name'] %></p>
     <p><%= @receipt_list['address'] %></p>
@@ -60,9 +74,11 @@
       <% @receipt_order['line_order'].each do |item| %>
         <p><%= item['item'] %>  <%= item['number'] %> x <%= item['item_price'] %></p>
       <% end %>
-
-      <p>Pre tax: <%= @receipt_order['total'] %></p>
-      <p>Total due: <%= @receipt_order['tax_applied'] %></p>
+      <ul>  
+        <li>Pre tax total: £<%= @receipt_order['total'] %></li>
+        <li>VAT: <%= @calculator.tax_percentage %>%</li>
+        <li>Total due: £<%= @receipt_order['tax_applied'] %></li>
+      </ul>
     <% end %>  
   </section>  
 </main>  
