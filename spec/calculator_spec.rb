@@ -12,6 +12,31 @@ describe 'Calculator' do
                    'Double Espresso',
                    'Single Espresso']
   end
+  let(:order_jane) do
+    double :order,
+           table_number: 4,
+           customers: 'Jane',
+           items: ['Cafe Latte',
+                   'Cafe Latte',
+                   'Blueberry Muffin',
+                   'Choc Mudcake']
+  end
+  let(:order_john) do
+    double :order,
+           table_number: 4,
+           customers: 'John',
+           items: ['Americano',
+                   'Americano',
+                   'Americano',
+                   'Americano',
+                   'Tiramisu',
+                   'Tiramisu',
+                   'Blueberry Muffin',
+                   'Blueberry Muffin',
+                   'Blueberry Muffin',
+                   'Blueberry Muffin',
+                   'Blueberry Muffin']
+  end
   it 'can calculate total of order' do
     expect(calculator.total_up(order)[:total]).to eq(17.35)
   end
@@ -29,5 +54,13 @@ describe 'Calculator' do
   it 'can display the amount due if the amount given is below the total due' do
     calculator.total_up(order)
     expect(calculator.calculate_change(15)).to eq(-3.22)
+  end
+
+  it 'can calculate proper discounts' do
+    expect(calculator.total_up(order_jane)).to eq(total: 19.54, tax_applied: 20.52)
+  end
+
+  it 'can calculate proper discounts' do
+    expect(calculator.total_up(order_john)).to eq(total: 53.20, tax_applied: 55.86)
   end
 end

@@ -2,11 +2,11 @@
   {
     "percentage": 10,
     "product": "muffin",
-    "cost": null
-  }
+    "cost": "NA"
+  },
   {
     "percentage": 5,
-    "product": null,
+    "product": "NA",
     "cost": 50
   }
 ]
