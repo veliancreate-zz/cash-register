@@ -1,5 +1,5 @@
 require 'capybara/rspec'
-require './app/app'
+require './app/server'
 require 'capybara/poltergeist'
 
 Capybara.app = Till

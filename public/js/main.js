@@ -3,7 +3,7 @@ $( document ).ready( function() {
     e.preventDefault();
     var text = $( this ).text();
     $.post( '/add_item', { product: text }, function( response ){
-      window.location.replace('/');
+      window.location.replace('/order');
     });
   });
 

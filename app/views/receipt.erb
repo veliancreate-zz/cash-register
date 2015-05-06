@@ -1,5 +1,32 @@
-<p><%= @receipt_list['date'] %></p>
-<p><%= @receipt_list['shop_name'] %></p>
-<p><%= @receipt_list['address'] %></p>
-<p>Phone: <%= @receipt_list['phone'] %></p>
-<p>Table: <%= @receipt_list['order']['table_number'] %>/<%= @receipt_list['customers_count'] %></p>
+<section class="col-xs-12 col-sm-4">
+  <h2>Receipt</h2>
+  <p><%= @receipt_list['date'] %></p>
+  <p><%= @receipt_list['shop_name'] %></p>
+  <p><%= @receipt_list['address'] %></p>
+  <p>Phone: <%= @receipt_list['phone'] %></p>
+  <% if @receipt_order %>  
+    <p>Table: <%= @receipt_order['table_number'] %>/<%= @receipt_list['customers_count'] %></p>
+    <h3>Customers:</h3>
+    <ul>
+    <% @receipt_order['customers'].each do |customer| %>
+      <li><%= customer %></li>
+    <% end %>
+    </ul>
+    <% @receipt_order['line_order'].each do |item| %>
+      <p><%= item['item'] %>  <%= item['number'] %> x <%= item['item_price'] %></p>
+    <% end %>
+    <h3>Discounts:</h3>
+    <ul>
+      <% @order.format_discounts.each do |discount| %>
+        <li><%= discount %></li>
+      <% end %>  
+    </ul>
+    <ul>  
+      <li>Pre tax total: £<%= @receipt_totals['total'] %></li>
+      <li>VAT: <%= @receipt_totals['tax_percentage'] %>%</li>
+      <li>Total due: £<%= @receipt_totals['tax_applied'] %></li>
+      <li>Amount paid: £<%= @receipt_totals['amount_paid'] %></li>
+      <li>Change given: £<%= @receipt_totals['change']%></li>
+    </ul>
+  <% end %>  
+</section>  

@@ -56,5 +56,5 @@ class Calculator
       tax_applied: @tax_applied,
       change: @change
     }
-  end  
+  end
 end

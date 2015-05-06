@@ -1,0 +1,55 @@
+<section class="col-xs-12 col-sm-4">  
+  <h2>Current order:</h2>
+  <form action="/customer_update" method="post">
+    Add customer<input type="text" name="customer">
+  </form>
+  Update table number:
+  <select>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+  <h3>Order table number:</h3>
+  <p id="table-number"><%= @order.table_number %></p>
+  <h3>Customers:</h3>
+  <% if @order.customers %>
+    <ul>
+      <% @order.customers.each do |customer| %>
+        <li><%= customer %></li>
+      <% end %>
+    </ul>    
+  <% end %>  
+  <ul id="dynamic-list" class="dynamic-ul">
+    <% @order.line_order.each do |line| %>
+      <li><%= line[:item] %> <%= line[:number] %> x <%= line[:item_price] %></li>
+    <% end %>
+  </ul>
+
+  <h3>Discounts:</h3>
+  <ul>
+    <% @order.format_discounts.each do |discount| %>
+      <li><%= discount %></li>
+    <% end %>  
+  </ul>
+
+  <ul id="dynamic-costs-list" class="dynamic-ul">
+    <li>Pretax total: £<%= @order.total_up[:total] %></li>
+    <li>VAT: <%= @calculator.tax_percentage %>%</li>
+    <li>Total due: £<%= @order.total_up[:tax_applied] %></li>
+  </ul>
+
+  <% if @warning %>
+    <p><%= @warning %></p>
+  <% end %>
+
+  <form id="generate-receipt" action="/generate_receipt" method="post">
+    Cash given<input type="text" name="cash_given">
+  </form>  
+
+  <form method="post" action="/clear_order">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Clear current order">
+  </form>
+</section> 

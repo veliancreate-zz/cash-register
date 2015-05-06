@@ -50,6 +50,6 @@ describe 'Orders' do
   end
 
   it 'can retrieve the applied total' do
-    expect(order_more.total_up).to eq(total: 17.35, tax_applied: 18.22)
+    expect(order_more.total_up).to eq(total: 17.35, tax_applied: 18.22, change: 0, amount_paid: 0, tax_percentage: 5)
   end
 end

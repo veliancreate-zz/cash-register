@@ -1,7 +1,7 @@
 require_relative '../app/lib/calculator.rb'
 
 describe 'Calculator' do
-  calculator = Calculator.new
+  let(:calculator) { Calculator.new }
   let(:order) do
     double :order,
            table_number: 4,
@@ -75,13 +75,19 @@ describe 'Calculator' do
   end
 
   it 'can calculate proper discounts' do
-    expect(calculator.total_up(order_jane)).to eq(total: 19.54, tax_applied: 20.52)
+    calculator.total_up(order_jane)
+    calculator.calculate_change(25)
+    expect(calculator.total_up(order_jane)).to eq(total: 19.54, tax_applied: 20.52, change: 4.48, amount_paid: 25, tax_percentage: 5)
   end
 
   it 'can calculate proper discounts' do
-    expect(calculator.total_up(order_john)).to eq(total: 53.20, tax_applied: 55.86)
+    calculator.total_up(order_john)
+    calculator.calculate_change(60)
+    expect(calculator.total_up(order_john)).to eq(total: 53.2, tax_applied: 55.86, change: 4.14, amount_paid: 60, tax_percentage: 5)
   end
   it 'can calculate proper discounts' do
-    expect(calculator.total_up(order_final)).to eq(total: 54.07, tax_applied: 56.78)
+    calculator.total_up(order_final)
+    calculator.calculate_change(57)
+    expect(calculator.total_up(order_final)).to eq(total: 54.07, tax_applied: 56.78, change: 0.22, amount_paid: 57, tax_percentage: 5)
   end
 end
