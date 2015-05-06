@@ -4,23 +4,27 @@
   "address": "123 Lakeside Way",
   "order": {
     "items": [
-
+      "Blueberry Muffin"
     ],
     "table_number": 1,
     "customers": [
 
     ],
     "line_order": [
-
+      {
+        "item": "Blueberry Muffin",
+        "number": 1,
+        "item_price": 4.05
+      }
     ],
     "calculator": {
-      "total": 0.0,
-      "tax_applied": 0.0,
+      "total": 3.64,
+      "tax_applied": 3.82,
       "change": 0,
       "amount_paid": 0,
       "tax_percentage": 5
     }
   },
-  "date": "05/06/15 16:13:57",
+  "date": "05/06/15 22:38:39",
   "customers_count": 0
 }

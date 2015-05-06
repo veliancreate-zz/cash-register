@@ -48,13 +48,4 @@ class Calculator
     multiply = @tax_percentage / 100.round(3)
     @total * multiply + @total
   end
-
-  def to_json
-    {
-      tax_percentage: @tax_percentage,
-      total: @total,
-      tax_applied: @tax_applied,
-      change: @change
-    }
-  end
 end
