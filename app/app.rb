@@ -25,17 +25,9 @@ class Till < Sinatra::Base
     erb :"/../views/index"
   end
 
-  get '/add_item' do
-    erb :"/../views/index"
-  end
-
   post '/add_item' do
     @order.add_item(params[:product])
     redirect '/'
-  end
-
-  get '/customer_update' do
-    erb :"/../views/index"
   end
 
   post '/customer_update' do
@@ -52,11 +44,18 @@ class Till < Sinatra::Base
     body json table_number: @order.table_number
   end
 
-  get '/receipt_update' do
-    @receipt_order = @receipt_list['order']
-    @receipt.reset_order(Order)
-    @order = @receipt.order
-    @order.calculator = Calculator
+  get '/generate_receipt' do
+    erb :"/../views/index"
+  end
+
+  post '/generate_receipt' do
+    cash = params[:cash_given].to_f.round(2)
+    if @calculator.calculate_change(cash) < 0
+      @warning = 'Not enough cash given'
+    else
+      define_receipt
+      reset_order
+    end
     erb :"/../views/index"
   end
 

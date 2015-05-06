@@ -54,11 +54,9 @@ class Order
     {
       items: @items,
       table_number: @table_number,
-      tax_percentage: @calculator.tax_percentage,
-      tax_applied: total_up[:tax_applied],
       customers: @customers,
       line_order: line_order,
-      total: total_up[:total]
+      calculator: total_up
     }
   end
 end

@@ -51,7 +51,13 @@
       <li>Total due: £<%= @order.total_up[:tax_applied] %></li>
     </ul>
 
-    <a id="generate-receipt" href="#">Generate receipt</a>
+    <% if @warning %>
+      <p><%= @warning %></p>
+    <% end %>
+    
+    <form id="generate-receipt" action="/generate_receipt" method="post">
+      Cash given<input type="text" name="cash_given">
+    </form>  
   </section>  
   <section class="col-xs-12 col-sm-4">
     <h2>Receipt</h2>
@@ -77,9 +83,11 @@
         <% end %>  
       </ul>
       <ul>  
-        <li>Pre tax total: £<%= @receipt_order['total'] %></li>
-        <li>VAT: <%= @calculator.tax_percentage %>%</li>
-        <li>Total due: £<%= @receipt_order['tax_applied'] %></li>
+        <li>Pre tax total: £<%= @receipt_totals['total'] %></li>
+        <li>VAT: <%= @receipt_totals['tax_percentage'] %>%</li>
+        <li>Total due: £<%= @receipt_totals['tax_applied'] %></li>
+        <li>Amount paid: £<%= @receipt_totals['amount_paid'] %></li>
+        <li>Change given: £<%= @receipt_totals['change']%></li>
       </ul>
     <% end %>  
   </section>  

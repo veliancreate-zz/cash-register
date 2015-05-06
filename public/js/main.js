@@ -13,9 +13,4 @@ $( document ).ready( function() {
       $('#table-number').text(response.table_number);
     });
   });
-
-  $( '#generate-receipt' ).click( function( e ) {
-    e.preventDefault();
-    window.location.replace('/receipt_update');
-  });
 });
