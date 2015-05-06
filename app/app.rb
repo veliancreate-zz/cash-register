@@ -43,13 +43,13 @@ class Till < Sinatra::Base
     redirect '/'
   end
 
-  get '/table_number_update' do 
-    erb :"/../views/index"  
+  get '/table_number_update' do
+    erb :"/../views/index"
   end
 
   post '/table_number_update' do
     @order.table_number = params[:table_number]
-    body json table_number: @order.table_number 
+    body json table_number: @order.table_number
   end
 
   get '/receipt_update' do
