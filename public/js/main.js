@@ -9,7 +9,9 @@ $( document ).ready( function() {
 
   $('select').change(function(){
     var tableNumber = $(this).val();
-    $.post('/customer_update', { table_number: tableNumber });
+    $.post('/table_number_update', { table_number: tableNumber }, function(response){
+      $('#table-number').text(response.table_number);
+    });
   });
 
   $( '#generate-receipt' ).click( function( e ) {

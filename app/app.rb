@@ -39,9 +39,17 @@ class Till < Sinatra::Base
   end
 
   post '/customer_update' do
-    @order.table_number = params[:table_number] if params[:table_number]
     @order.add_customer(params[:customer]) if params[:customer]
-    erb :"/../views/index"
+    redirect '/'
+  end
+
+  get '/table_number_update' do 
+    erb :"/../views/index"  
+  end
+
+  post '/table_number_update' do
+    @order.table_number = params[:table_number]
+    body json table_number: @order.table_number 
   end
 
   get '/receipt_update' do

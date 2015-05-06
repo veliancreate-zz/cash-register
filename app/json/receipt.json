@@ -6,17 +6,18 @@
     "items": [
 
     ],
-    "table_number": 1,
+    "table_number": "3",
     "tax_percentage": 5,
     "tax_applied": 0.0,
     "customers": [
-
+      "John",
+      "Dave"
     ],
     "line_order": [
 
     ],
     "total": 0.0
   },
-  "date": "05/05/15 23:40:19",
-  "customers_count": 0
+  "date": "05/06/15 11:09:59",
+  "customers_count": 2
 }
