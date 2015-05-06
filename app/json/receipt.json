@@ -4,39 +4,23 @@
   "address": "123 Lakeside Way",
   "order": {
     "items": [
-      "Cappucino",
-      "Cappucino",
-      "Cappucino",
-      "Cappucino",
-      "Tiramisu",
-      "Tiramisu",
-      "Tiramisu",
-      "Tiramisu"
+
     ],
     "table_number": 1,
     "customers": [
 
     ],
     "line_order": [
-      {
-        "item": "Cappucino",
-        "number": 4,
-        "item_price": 3.85
-      },
-      {
-        "item": "Tiramisu",
-        "number": 4,
-        "item_price": 11.4
-      }
+
     ],
     "calculator": {
-      "total": 57.95,
-      "tax_applied": 60.85,
-      "change": 0.15,
-      "amount_paid": 61.0,
+      "total": 0.0,
+      "tax_applied": 0.0,
+      "change": 0,
+      "amount_paid": 0,
       "tax_percentage": 5
     }
   },
-  "date": "05/06/15 15:58:25",
+  "date": "05/06/15 16:13:57",
   "customers_count": 0
 }
