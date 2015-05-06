@@ -11,7 +11,7 @@ require_relative 'lib/receipt'
 require_relative 'lib/order'
 require_relative 'lib/calculator'
 
-require_relative 'helpers/objects'
+require_relative 'helpers/objects_getter'
 
 class Till < Sinatra::Base
   register Sinatra::Partial
