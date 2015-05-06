@@ -11,6 +11,7 @@ require_relative 'helpers/objects'
 
 class Till < Sinatra::Base
   enable :sessions
+  enable :method_override
 
   helpers ObjectsGetter
 
@@ -57,6 +58,11 @@ class Till < Sinatra::Base
       reset_order
     end
     erb :"/../views/index"
+  end
+
+  delete '/clear_order' do
+    reset_order
+    redirect '/'
   end
 
   set :views, proc { File.join(root, 'views') }

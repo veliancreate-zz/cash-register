@@ -54,10 +54,15 @@
     <% if @warning %>
       <p><%= @warning %></p>
     <% end %>
-    
+
     <form id="generate-receipt" action="/generate_receipt" method="post">
       Cash given<input type="text" name="cash_given">
     </form>  
+
+    <form method="post" action="/clear_order">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Clear current order">
+    </form>
   </section>  
   <section class="col-xs-12 col-sm-4">
     <h2>Receipt</h2>
