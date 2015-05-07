@@ -36,7 +36,7 @@
 
   <ul id="dynamic-costs-list" class="dynamic-ul">
     <li>Pretax total: £<%= @order.total_up[:total] %></li>
-    <li>VAT: <%= @calculator.tax_percentage %>%</li>
+    <li>VAT: <%= @order.calculator.tax_percentage %>%</li>
     <li>Total due: £<%= @order.total_up[:tax_applied] %></li>
   </ul>
 

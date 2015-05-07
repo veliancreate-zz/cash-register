@@ -2,9 +2,12 @@ module ObjectsGetter
   def objects_getter
     @order = @receipt.order
     @order.calculator = Calculator
-    @calculator = @order.calculator
     @menu = @order.items_getter.sort
     @receipt_list = @receipt.read_json
+  end
+
+  def calculator
+    @order.calculator
   end
 
   def define_receipt

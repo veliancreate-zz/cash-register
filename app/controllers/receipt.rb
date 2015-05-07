@@ -5,7 +5,7 @@ class Till < Sinatra::Base
 
   post '/generate_receipt' do
     cash = params[:cash_given].to_f.round(2)
-    if @calculator.calculate_change(cash) < 0
+    if calculator.calculate_change(cash) < 0
       @warning = 'Not enough cash given'
     else
       define_receipt
