@@ -1,5 +1,5 @@
 ### Status
-[![Build Status](https://travis-ci.org/veliancreate/till-tech-test.svg?branch=master)](https://travis-ci.org/veliancreate/till-tech-test.svg?branch=master)
+![Build Status](https://travis-ci.org/veliancreate/cash-register.svg?branch=master)
 
 I built this till as part of a tech-test challenge at Makers Academy. I decided to use Sinatra to practice my Sinatra and Ruby skills.
 
