@@ -4,64 +4,27 @@
   "address": "123 Lakeside Way",
   "order": {
     "items": [
-      "Americano",
-      "Blueberry Muffin",
-      "Choc Mousse",
-      "Choc Mousse",
-      "Chocolate Chip Muffin",
-      "Chocolate Chip Muffin",
-      "Double Espresso",
-      "Tea",
-      "Tea",
-      "Tea"
+      "Cafe Latte"
     ],
-    "table_number": "5",
+    "table_number": 1,
     "customers": [
-      "Cindy",
-      "Mo",
-      "Naomi",
-      "Sylvester"
+
     ],
     "line_order": [
       {
-        "item": "Americano",
+        "item": "Cafe Latte",
         "number": 1,
-        "item_price": 3.75
-      },
-      {
-        "item": "Blueberry Muffin",
-        "number": 1,
-        "item_price": 4.05
-      },
-      {
-        "item": "Choc Mousse",
-        "number": 2,
-        "item_price": 8.2
-      },
-      {
-        "item": "Chocolate Chip Muffin",
-        "number": 2,
-        "item_price": 4.05
-      },
-      {
-        "item": "Double Espresso",
-        "number": 1,
-        "item_price": 3.75
-      },
-      {
-        "item": "Tea",
-        "number": 3,
-        "item_price": 3.65
+        "item_price": 4.75
       }
     ],
     "calculator": {
-      "total": 45.77,
-      "tax_applied": 48.06,
-      "change": 1.94,
-      "amount_paid": 50.0,
+      "total": 4.75,
+      "tax_applied": 4.99,
+      "change": 0,
+      "amount_paid": 0,
       "tax_percentage": 5
     }
   },
-  "date": "05/27/15 21:44:38",
-  "customers_count": 4
+  "date": "05/27/15 22:31:43",
+  "customers_count": 0
 }
