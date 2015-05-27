@@ -19,7 +19,7 @@
     <section>    
       <h3>Order items:</h3>
       <% @receipt_order['line_order'].each do |item| %>
-        <p><%= item['item'] %>  <%= item['number'] %> x <%= item['item_price'] %></p>
+        <p><%= item['item'] %>  <%= item['number'] %> x £<%= item['item_price'] %></p>
       <% end %>
     </section>
     <section>    
