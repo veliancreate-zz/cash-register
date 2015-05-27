@@ -4,7 +4,7 @@
   "address": "123 Lakeside Way",
   "order": {
     "items": [
-      "Blueberry Muffin"
+      "Cafe Latte"
     ],
     "table_number": 1,
     "customers": [
@@ -12,19 +12,19 @@
     ],
     "line_order": [
       {
-        "item": "Blueberry Muffin",
+        "item": "Cafe Latte",
         "number": 1,
-        "item_price": 4.05
+        "item_price": 4.75
       }
     ],
     "calculator": {
-      "total": 3.64,
-      "tax_applied": 3.82,
+      "total": 4.75,
+      "tax_applied": 4.99,
       "change": 0,
       "amount_paid": 0,
       "tax_percentage": 5
     }
   },
-  "date": "05/07/15 10:04:11",
+  "date": "05/27/15 21:18:49",
   "customers_count": 0
 }

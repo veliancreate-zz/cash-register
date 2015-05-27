@@ -1,9 +1,9 @@
-<section class="col-xs-12 col-sm-4">
+<section id="menu" class="col-xs-12 col-sm-4">
   <h2>Menu</h2>
-  <ul>
+  <ul class="clearfix">
     <% @menu.each do |item| %>
-      <li><a href="#" class="product"><%=  item[0] %></a></li>
-      <li>Price: £<%= item[1] %></li>
+        <li class="products"><a href="#" class="product"><%=  item[0] %></a></li>
+        <li class="price">Price: £<%= item[1] %></li>
     <% end %>
   </ul>
 </section>

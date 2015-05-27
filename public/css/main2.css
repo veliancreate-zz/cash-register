@@ -1,0 +1,74 @@
+h2{
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  border-bottom: solid 1px;
+  margin-bottom: 20px;
+}
+
+header{
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 3rem;
+  background-position: center;
+  text-align: center;
+  font-family: 'Great Vibes', cursive;
+  margin: 20px 0;}
+  header h1{
+    padding: 20px 0;
+  }
+
+section#receipt{
+  font-family: 'Special Elite', cursive;
+}
+
+section#receipt section:first-child{
+  margin-bottom: 40px;
+}
+
+section#receipt section{
+  margin-bottom: 20px;
+}
+
+section#menu li{
+  float: left;
+  width: 50%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+section#order{
+  font-family: sans-serif;
+}
+
+section#order section{
+  border-bottom: 1px solid;
+  padding: 20px 0;
+}
+
+section#order section:nth-child(2){
+  padding-top: 0px;
+}
+
+
+section#order h3{
+  font-family: serif;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+
+li.price{
+  padding: 10px;
+  font-family: 'Special Elite', cursive;
+}
+section#menu li a{
+  color: #fff;
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  background-color: #000;
+  border-radius: 20px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: .75rem;
+}

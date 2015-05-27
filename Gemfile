@@ -9,7 +9,6 @@ gem 'rake'
 gem 'rack-flash3'
 gem 'sinatra-partial'
 gem 'sinatra-contrib'
-gem 'tilt'
 
 group :development, :test do
   gem 'capybara'
@@ -18,6 +17,5 @@ group :development, :test do
   gem 'rubocop'
   gem 'rubocop-rspec'
   gem 'shotgun'
-  gem 'phantomjs'
-  gem 'poltergeist'
+  gem 'selenium-webdriver'
 end
