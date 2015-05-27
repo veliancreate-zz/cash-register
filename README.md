@@ -8,6 +8,11 @@ Technology Used
 
 Sinatra, Ruby, JSON, JQuery, RSpec, Capybara, Rubocop, Travis CI, Hound.
 
+Screenshot
+----------
+
+![screenshot](screenshot.png)
+
 Till tech test
 ==============
 
@@ -18,7 +23,7 @@ Specification
 
 This is what a sample receipt looks like:
 
-![a receipt](app/public/images/receipt.jpg)
+![a receipt](public/images/receipt.jpg)
 
 
 Version 1
