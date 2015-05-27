@@ -1,5 +1,6 @@
 require 'capybara/rspec'
 require './app/server'
+require 'selenium-webdriver'
 
 Capybara.javascript_driver = :selenium
 Capybara.app = Till
