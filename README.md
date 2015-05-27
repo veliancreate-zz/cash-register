@@ -8,6 +8,11 @@ Technology Used
 
 Sinatra, Ruby, JSON, JQuery, RSpec, Capybara, Rubocop, Travis CI, Hound.
 
+Screenshot
+----------
+
+![screenshot](screenshot.png)
+
 Till tech test
 ==============
 
