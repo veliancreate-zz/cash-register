@@ -18,7 +18,7 @@ Specification
 
 This is what a sample receipt looks like:
 
-![a receipt](app/public/images/receipt.jpg)
+![a receipt](public/images/receipt.jpg)
 
 
 Version 1
