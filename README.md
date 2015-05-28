@@ -1,5 +1,4 @@
-### Status
-![Build Status](https://travis-ci.org/veliancreate/cash-register.svg?branch=master)
+![Build Status](https://travis-ci.org/veliancreate/cash-register.svg?branch=master) [![Code Climate](https://codeclimate.com/github/veliancreate/cash-register/badges/gpa.svg)](https://codeclimate.com/github/veliancreate/cash-register)
 
 I built this till as part of a tech-test challenge at Makers Academy. I decided to use Sinatra to practice my Sinatra and Ruby skills.
 
