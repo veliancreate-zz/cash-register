@@ -8,6 +8,10 @@ Technology Used
 
 Sinatra, Ruby, JSON, JQuery, RSpec, Capybara, Rubocop, Travis CI, Hound.
 
+## Lessons learned
+
+I completed this challenge by using mainly server-side techniques to update the view. However, in hindsight it would have been preferable to use two-way data binding technology with Angular JS, or even websockets. 
+
 Screenshot
 ----------
 
